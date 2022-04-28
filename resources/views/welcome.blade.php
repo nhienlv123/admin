@@ -1,122 +1,69 @@
-<!DOCTYPE HTML>
-<html>
-
-<head>
-    <title>Admin Pages</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="csrf-token" value="{{ csrf_token() }}" />
-
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-    <link href="{{ mix('css/app.css') }}" type="text/css" rel="stylesheet" />
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
-    
-    <script type="application/x-javascript">
-        addEventListener("load", function() {
-            setTimeout(hideURLbar, 0);
-        }, false);
-        function hideURLbar() {
-            window.scrollTo(0, 1);
-        }
-    </script>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="../../assets/admin/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <!-- Custom CSS -->
-    <link href="../../assets/admin/css/style.css" rel='stylesheet' type='text/css' />
-
-    <!-- font-awesome icons CSS -->
-    <link href="../../assets/admin/css/font-awesome.css" rel="stylesheet">
-    <!-- //font-awesome icons CSS-->
-
-    <!-- side nav css file -->
-    <link href='../../assets/admin/css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css' />
-    <!-- //side nav css file -->
-
-    <!-- js-->
-    <script src="../../assets/admin/js/jquery-1.11.1.min.js"></script>
-    <script src="../../assets/admin/js/modernizr.custom.js"></script>
-
-    <!--webfonts-->
-    <link href="//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
-    <!--//webfonts-->
-
-    <!-- Metis Menu -->
-    <script src="../../assets/admin/js/metisMenu.min.js"></script>
-    <script src="../../assets/admin/js/custom.js"></script>
-    <link href="../../assets/admin/css/custom.css" rel="stylesheet">
-    <!--//Metis Menu -->
-    <style>
-        #chartdiv {
-            width: 100%;
-            height: 295px;
-        }
-    </style>
-     
-
-    <!-- requried-jsfiles-for owl -->
-    <link href="../../assets/admin/css/owl.carousel.css" rel="stylesheet">
-    <script src="../../assets/admin/js/owl.carousel.js"></script>
-    <script>
-        $(document).ready(function() {
-        $("#owl-demo").owlCarousel({
-        items: 3,
-        lazyLoad: true,
-        autoPlay: true,
-        pagination: true,
-        nav: true,
-        });
-        });
-    </script>
-</head>
-
-<body class="cbp-spmenu-push">
-    <div id="app">
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Laravel</title>
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+        <link href="{{ mix('css/app.css') }}" type="text/css" rel="stylesheet" />
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+        <meta name="csrf-token" value="{{ csrf_token() }}" />
         
-    </div>
-    <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
+        <!-- Styles -->
+        <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 
-    <script src="../../assets/admin/js/Chart.bundle.js"></script>
-    <script src="../../assets/admin/js/utils.js"></script>
-    
-    <!-- Classie -->
-    <!-- for toggle left push menu script -->
-    <script src="../../assets/admin/js/classie.js"></script>
-    <script>
-        var menuLeft = document.getElementById('cbp-spmenu-s1'),
-            showLeftPush = document.getElementById('showLeftPush'),
-            body = document.body;
-            showLeftPush.onclick = function() {
-                classie.toggle(this, 'active');
-                classie.toggle(body, 'cbp-spmenu-push-toright');
-                classie.toggle(menuLeft, 'cbp-spmenu-open');
-                disableOther('showLeftPush');
-        };
-        function disableOther(button) {
-            if (button !== 'showLeftPush') {
-                classie.toggle(showLeftPush, 'disabled');
-            }
-        }
-    </script>
-    <!-- //Classie -->
-    <!-- //for toggle left push menu script -->
+        <!-- FOR ADMIN -->  
+        <!-- ======================================================================================================================== -->
+        <!-- Favicon icon -->
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/admin/images/favicon.png" />
+        <!-- Custom CSS -->
+        <link rel="stylesheet" type="text/css" href="/assets/admin/libs/select2/dist/css/select2.min.css" />
+        <link rel="stylesheet" type="text/css" href="/assets/admin/libs/jquery-minicolors/jquery.minicolors.css" />
+        <link rel="stylesheet" type="text/css" href="/assets/admin/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" />
+        <link rel="stylesheet" type="text/css" href="/assets/admin/libs/quill/dist/quill.snow.css" />
+        <link rel="stylesheet" type="text/css" href="/assets/admin/extra-libs/multicheck/multicheck.css" />
+        <link href="/assets/admin/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
+        <link href="/assets/admin/dist/css/style.min.css" rel="stylesheet" />
+        <!-- ======================================================================================================================== -->
 
-    <!--scrolling js-->
-    <script src="../../assets/admin/js/jquery.nicescroll.js"></script>
-    <script src="../../assets/admin/js/scripts.js"></script>
-    <!--//scrolling js-->
+    </head>
+    <body>
+        <div id="app">
+          <example-component></example-component>
+        </div>
+        
+        <!-- Script -->
+        <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
 
-    <!-- side nav js -->
-    <script src='../../assets/admin/js/SidebarNav.min.js' type='text/javascript'></script>
-    <script>
-        $('.sidebar-menu').SidebarNav()
-    </script>
-    <!-- //side nav js -->
+        <!-- FOR ADMIN -->  
+        <!-- ======================================================================================================================== -->
+        <script src="/assets/admin/libs/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap tether Core JavaScript -->
+        <script src="/assets/admin/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- slimscrollbar scrollbar JavaScript -->
+        <script src="/assets/admin/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+        <script src="/assets/admin/extra-libs/sparkline/sparkline.js"></script>
+        <!--Wave Effects -->
+        <script src="/assets/admin/dist/js/waves.js"></script>
+        <!--Menu sidebar -->
+        <script src="/assets/admin/dist/js/sidebarmenu.js"></script>
+        <!--Custom JavaScript -->
+        <script src="/assets/admin/dist/js/custom.min.js"></script>
+        <!-- This Page JS -->
+        <script src="/assets/admin/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+        <script src="/assets/admin/dist/js/pages/mask/mask.init.js"></script>
+        <script src="/assets/admin/libs/select2/dist/js/select2.full.min.js"></script>
+        <script src="/assets/admin/libs/select2/dist/js/select2.min.js"></script>
+        <script src="/assets/admin/libs/jquery-asColor/dist/jquery-asColor.min.js"></script>
+        <script src="/assets/admin/libs/jquery-asGradient/dist/jquery-asGradient.js"></script>
+        <script src="/assets/admin/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js"></script>
+        <script src="/assets/admin/libs/jquery-minicolors/jquery.minicolors.min.js"></script>
+        <script src="/assets/admin/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+        <script src="/assets/admin/libs/quill/dist/quill.min.js"></script>
+        <script src="/assets/admin/extra-libs/multicheck/datatable-checkbox-init.js"></script>
+        <script src="/assets/admin/extra-libs/multicheck/jquery.multicheck.js"></script>
+        <script src="/assets/admin/extra-libs/DataTables/datatables.min.js"></script>
+        <!-- ======================================================================================================================== -->
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../../assets/admin/js/bootstrap.js"> </script>
-    <!-- //Bootstrap Core JavaScript -->
-
-</body>
-
+    </body>
 </html>
